@@ -9,7 +9,17 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import AddUser from './components/users/adduser';
 import EditUser from './components/users/EditUser';
 import User from './components/users/users';
-import Form from './form/Form';
+import axios from 'axios';
+import { useHistory} from "react-router-dom";
+
+
+
+function result  (values){
+  //let history = useHistory();
+  console.log('result is', values);
+  axios.post("http://localhost:4000/add", values);
+//history.push("/");
+}
 
 
 function App(props) {
@@ -20,15 +30,17 @@ function App(props) {
     <div className="App">
     <Navbar />
 
-    <switch>
+    <Switch>
       <Route exact path="/" component={Home}/>
 {/*       <Route exact path="/about" component={About}/>
       <Route exact path="/contact" component={Contact}/> */}
-      <Route  path="/users/adduser" component={AddUser} />
+      {/* <Route  path="/users/adduser" component={AddUser} /> */}
+      <Route  path="/users/adduser" component={() => (<AddUser onSubmit={result} />)} />
+      
       <Route  path="/users/edit/:id" component={EditUser} />
       <Route  path="/users/:id" component={User} />
 
-    </switch>
+    </Switch>
       
     </div>
     </Router> 

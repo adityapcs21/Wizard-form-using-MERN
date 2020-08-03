@@ -8,11 +8,6 @@ import NomineeDetailsForm from './NomineeDetailsForm';
 import ProfessionalExperienceDetailForm from './ProfessionalExperienceDetailForm';
 
 class Form extends Component {
-
-
-
-
-
   constructor(props) {
     super(props);
     this.nextPage = this.nextPage.bind(this);
@@ -44,16 +39,11 @@ class Form extends Component {
 
   render() {
 
-    
     const { onSubmit } = this.props;
     const { page, steps } = this.state;
 
     // Edited from heere!
-
-
-
     // const {firstname,lastname,email,phone,address,course,college,year,percentage,companyName,from,to,designation,LinkedIn,GitHub,Facebook,hobbies}=user;
-
 
     return (
       <Card>

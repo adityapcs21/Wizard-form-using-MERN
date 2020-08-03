@@ -33,8 +33,12 @@ const NomineeDetailsForm
 
   let history = useHistory();
   const onSubmit = async e => {
+
     e.preventDefault();
-    await axios.post("http://localhost:3003/users", user);
+    console.log(e.target.value);
+   
+    
+    await axios.post("http://localhost:4000/users", user);
     history.push("/");
   };
   
@@ -42,7 +46,7 @@ const NomineeDetailsForm
     setUser({ ...user, [e.target.name]: e.target.value });
   };
   return (
-    <form onSubmit={e => onSubmit(e)}>
+    <form onSubmit={handleSubmit}>
       <Col xs="12" sm="12">
         <Card className="card-border">
           <CardBody>

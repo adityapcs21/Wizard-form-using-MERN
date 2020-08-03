@@ -8,7 +8,7 @@ import axios from 'axios';
 import {
   mobile,
   captialize,
-  email
+
 } from '../../validation/normalize';
 import {
   Button,
@@ -83,7 +83,7 @@ const GeneralForm = (props) => {
                   component={FormInput}
                   label="Email *"
                   inputPlaceHolder="Enter your Email Id"
-                  normalize={email}
+                  
                    value={email}
                    onChange={e => onInputChange(e)}
                 />

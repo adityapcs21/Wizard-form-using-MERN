@@ -27,7 +27,7 @@ const User = () => {
     loadUser();
   }, []);
   const loadUser = async () => {
-    const res = await axios.get(`http://localhost:3003/users/${id}`);
+    const res = await axios.get("http://localhost:4000/users?id="+id);
     setUser(res.data);
   };
   return (
